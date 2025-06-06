@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài đăng chờ duyệt - Dashboard Pawtect</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/logo.png" alt="PAWTECT Logo" class="logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="active"><a href="pending.html"><i class="fas fa-clock"></i> Chờ duyệt</a></li>
+                <li><a href="adoption.html"><i class="fas fa-paw"></i> Nhận nuôi</a></li>
+                <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Đóng góp</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <h1>Bài đăng chờ duyệt</h1>
+            <div class="user-info">
+                <span class="username">Admin</span>
+                <a href="../login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container single-column">
+        <div class="filter-group top-filters">
+            <button class="active">Chờ duyệt</button>
+            <button>Chưa tiếp nhận</button>
+            <button>Đã tiếp nhận</button>
+        </div>
+
+        <div class="page-title-section">
+            <h2>Bài đăng chờ duyệt</h2>
+            <div class="dropdown-filter">
+                <span>Tuần này</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+        </div>
+
+        <div class="approval-list">
+            <!-- Card bài đăng 1 -->
+            <div class="approval-card">
+                <div class="post-thumbnail">
+                    <img src="../images/dai-hoc-ton-duc-thang.jpg" alt="Ảnh bài đăng">
+                </div>
+                <div class="post-details">
+                    <h3>CASE #109</h3>
+                    <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
+                    <p><strong>Địa chỉ:</strong> 19 Nguyễn Hữu Thọ Quận 7</p>
+                    <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-approve">Duyệt</button>
+                    <button class="btn btn-reject">Không duyệt</button>
+                </div>
+            </div>
+
+            <!-- Card bài đăng 2 -->
+            <div class="approval-card">
+                <div class="post-thumbnail">
+                    <img src="../images/dai-hoc-fpt-tp-hcm-1.jpg" alt="Ảnh bài đăng">
+                </div>
+                <div class="post-details">
+                    <h3>CASE #110</h3>
+                    <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
+                    <p><strong>Địa chỉ:</strong> 7 Đ. D1, Long Thạnh Mỹ, Thủ Đức, Hồ Chí Minh</p>
+                    <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-approve">Duyệt</button>
+                    <button class="btn btn-reject">Không duyệt</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html> 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện Quản lí Pawtect</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/logo.png" alt="PAWTECT Logo" class="logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="pending.html"><i class="fas fa-clock"></i> Chờ duyệt</a></li>
+                <li><a href="adoption.html"><i class="fas fa-paw"></i> Nhận nuôi</a></li>
+                <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Đóng góp</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <span class="username">Admin</span>
+                <a href="../login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- Left Column -->
+        <aside class="left-column">
+            <section class="reception-stats">
+                <h2>Số liệu tiếp nhận</h2>
+                <div class="filter-group time-filters">
+                    <button class="active">Theo tuần</button>
+                    <button>Theo tháng</button>
+                    <button>Theo năm</button>
+                </div>
+                <div class="filter-group specific-filters" id="specific-filter-container">
+                    <!-- Filter buttons will be inserted here by JS -->
+                </div>
+            </section>
+            <section class="chart-section">
+                <div class="chart-container">
+                    <div class="donut-chart">
+                        <div class="chart-center">
+                            <strong>20</strong>
+                            <span>Bài đăng</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="legend">
+                    <div class="legend-item"><span class="dot pending"></span> Chưa tiếp nhận</div>
+                    <div class="legend-item"><span class="dot received"></span> Đã tiếp nhận</div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Quản lí bài đăng</h2>
+            <div class="case-list">
+                <div class="case-card">
+                    <div class="card-header">
+                        <h3>CASE #109</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="card-body">
+                        <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
+                        <p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p>
+                        <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="card-header">
+                        <h3>CASE #110</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="card-body">
+                        <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
+                        <p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p>
+                        <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="card-header">
+                        <h3>CASE #111</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="card-body">
+                        <p class="update-time">Cập nhật lúc 11:45 16/3/2023</p>
+                        <p><strong>Địa chỉ:</strong> 123 Đường LMN, Phường 4, Quận 5</p>
+                        <p><strong>Miêu tả:</strong> Chó Poodle đi lạc, có đeo vòng cổ màu đỏ.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html> 

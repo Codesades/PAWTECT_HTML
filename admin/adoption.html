@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn nhận nuôi - Dashboard Pawtect</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/logo.png" alt="PAWTECT Logo" class="logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="pending.html"><i class="fas fa-clock"></i> Chờ duyệt</a></li>
+                <li class="active"><a href="adoption.html"><i class="fas fa-paw"></i> Nhận nuôi</a></li>
+                <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Đóng góp</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <h1>Đơn nhận nuôi</h1>
+            <div class="user-info">
+                <span class="username">Admin</span>
+                <a href="../login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container single-column">
+        <div class="page-title-section">
+            <h2>Đơn nhận nuôi</h2>
+            <div class="dropdown-filter">
+                <span>Tuần này</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+        </div>
+
+        <div class="application-list">
+            <!-- Card đơn nhận nuôi 1 -->
+            <div class="application-card">
+                <div class="pet-image">
+                    <img src="../images/nhan-nuoi/be-gau.png" alt="Bé Gấu">
+                </div>
+                <div class="pet-info">
+                    <h3>BÉ GẤU</h3>
+                    <p class="adopter-name">Nguyễn Văn B</p>
+                    <div class="details">
+                        <p><strong>Địa chỉ:</strong> 50/32 Đường ABC Phường 8 Quận 7</p>
+                        <p><strong>Nghề nghiệp:</strong> Kế toán</p>
+                        <p><strong>Lý do:</strong> Ngủ quá nhiều</p>
+                        <p><strong>SĐT:</strong> 0779998886</p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-approve">Duyệt</button>
+                        <button class="btn btn-reject">Không duyệt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card đơn nhận nuôi 2 -->
+            <div class="application-card">
+                <div class="pet-image">
+                    <img src="../images/nhan-nuoi/be-ruoi.png" alt="Bé Ruồi">
+                </div>
+                <div class="pet-info">
+                    <h3>BÉ RUỒI</h3>
+                    <p class="adopter-name">Nguyễn Văn B</p>
+                    <div class="details">
+                        <p><strong>Địa chỉ:</strong> 50/32 Đường ABC Phường 8 Quận 7</p>
+                        <p><strong>Nghề nghiệp:</strong> Kế toán</p>
+                        <p><strong>Lý do:</strong> Ngủ quá nhiều</p>
+                        <p><strong>SĐT:</strong> 0779998886</p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-approve">Duyệt</button>
+                        <button class="btn btn-reject">Không duyệt</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card đơn nhận nuôi 3 -->
+            <div class="application-card">
+                <div class="pet-image">
+                    <img src="../images/nhan-nuoi/be-yaua.png" alt="Bé Yaua">
+                </div>
+                <div class="pet-info">
+                    <h3>BÉ YAUA</h3>
+                    <p class="adopter-name">Nguyễn Văn B</p>
+                    <div class="details">
+                        <p><strong>Địa chỉ:</strong> 50/32 Đường ABC Phường 8 Quận 7</p>
+                        <p><strong>Nghề nghiệp:</strong> Kế toán</p>
+                        <p><strong>Lý do:</strong> Miệng quá thúi</p>
+                        <p><strong>SĐT:</strong> 0779998886</p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-approve">Duyệt</button>
+                        <button class="btn btn-reject">Không duyệt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html> 
