@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+/* admin.css - Layout and content only (Header & Sidebar styles moved to sidebar.css) */
+
+:root {
+    --primary-color: #00AEEF;
+    --light-blue: #E0F7FF;
+    --text-color: #333;
+    --bg-color: #F8F9FA;
+    --white-color: #FFFFFF;
+    --border-color: #DEE2E6;
+    --sidebar-width: 280px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* --- DASHBOARD CONTENT --- */
+.dashboard-container {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+.left-column {
+    flex: 0 0 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.left-column h2,
+.main-content h2 {
+    text-align: center;
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.time-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-group button {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--white-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-group button:hover {
+    background-color: var(--light-blue);
+    border-color: var(--primary-color);
+}
+
+.filter-group button.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.specific-filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.specific-filters button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.specific-filters button span {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.chart-section {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.donut-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary-color) 0% 80%, var(--light-blue) 80% 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-center {
+    width: 150px;
+    height: 150px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-center strong {
+    font-size: 40px;
+}
+
+.chart-center span {
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.legend-item .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.legend-item .dot.pending {
+    background-color: var(--primary-color);
+}
+
+.legend-item .dot.received {
+    background-color: var(--white-color);
+    border: 2px solid var(--primary-color);
+}
+
+.case-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.case-card {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 174, 239, 0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card-header i {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.card-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}

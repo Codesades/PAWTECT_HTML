@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giao diện Quản lí Pawtect</title>
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/sidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <script src="../assets/js/include.js"></script>
+    
 </head>
-<body>
-    <!-- Sidebar -->
+<body onload="includeHTML(function() { document.dispatchEvent(new Event('DOMContentLoaded')); })">
+    <div data-include="../components/sidebar_admin.html"></div>
+    <div data-include="../components/header_admin.html"></div>
+
+    <!-- Sidebar 
     <aside class="sidebar">
         <div class="sidebar-header">
             <img src="../images/logo.png" alt="PAWTECT Logo" class="logo">
@@ -21,10 +28,10 @@
                 <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Đóng góp</a></li>
             </ul>
         </nav>
-    </aside>
+    </aside> 
 
-    <!-- Header -->
-    <header class="admin-header">
+    
+    <!-- <header class="admin-header">
         <div class="header-content">
             <h1>Dashboard</h1>
             <div class="user-info">
@@ -32,7 +39,7 @@
                 <a href="../login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <!-- Dashboard Content -->
     <div class="dashboard-container">
@@ -106,6 +113,7 @@
         </main>
     </div>
 
-    <script src="../js/admin.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
 </body>
 </html> 
