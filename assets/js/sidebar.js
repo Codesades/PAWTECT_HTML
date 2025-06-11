@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =============================================================
-    // PHẦN 1: LOGIC CHO SIDEBAR (CHẠY TRÊN MỌI TRANG)
+    // PHẦN 2: LOGIC CHO SIDEBAR (CHẠY TRÊN MỌI TRANG)
     // =============================================================
     const menuIcon = document.getElementById('menu-icon');
     const sidebarNav = document.getElementById('sidebar-nav');
@@ -26,21 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hàm đặt trạng thái 'active' cho mục sidebar dựa trên URL
+    // =========================================================================
+    // HÀM ĐẶT TRẠNG THÁI 'ACTIVE' CHO SIDEBAR (ĐÃ CẬP NHẬT)
+    // =========================================================================
     function setActiveSidebarItem() {
-        const currentPath = window.location.pathname; // Lấy đường dẫn hiện tại, ví dụ: "/dashboard"
-        const sidebarLinks = document.querySelectorAll('.sidebar ul li a'); // Lấy tất cả các link trong sidebar
+        // Lấy URL đầy đủ của trang hiện tại, ví dụ: "http://.../dashboard.html"
+        const currentPageUrl = window.location.href;
+        const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
 
         sidebarLinks.forEach(link => {
-            link.classList.remove('active'); // Xóa active khỏi tất cả các link trước
-            
-            // So sánh href của link với đường dẫn hiện tại
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active'); // Thêm active vào link khớp
+            link.classList.remove('active'); // Luôn xóa active khỏi tất cả các link trước
+
+            const linkHref = link.getAttribute('href');
+
+            // So sánh xem URL của trang hiện tại có *kết thúc bằng* href của link không.
+            // Cách này hoạt động chính xác cho các file .html
+            if (currentPageUrl.endsWith(linkHref)) {
+                link.classList.add('active');
             }
         });
     }
-
     // GỌI HÀM KHI TRANG TẢI XONG
     setActiveSidebarItem();
 

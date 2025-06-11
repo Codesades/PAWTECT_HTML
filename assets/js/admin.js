@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // =============================================================
     // PHẦN 1: KIỂM TRA XÁC THỰC ADMIN
     // =============================================================
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } */
 
     // =============================================================
-    // PHẦN 2: LOGIC CHO SIDEBAR
+    // PHẦN 2: LOGIC CHO SIDEBAR (CHẠY TRÊN MỌI TRANG)
     // =============================================================
     const menuIcon = document.getElementById('menu-icon');
     const sidebarNav = document.getElementById('sidebar-nav');
@@ -43,18 +43,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Hàm đặt trạng thái 'active' cho mục sidebar dựa trên URL
+    // =========================================================================
+    // HÀM ĐẶT TRẠNG THÁI 'ACTIVE' CHO SIDEBAR (ĐÃ CẬP NHẬT)
+    // =========================================================================
     function setActiveSidebarItem() {
-        const currentPath = window.location.pathname;
+        // Lấy URL đầy đủ của trang hiện tại, ví dụ: "http://.../dashboard.html"
+        const currentPageUrl = window.location.href;
         const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
 
         sidebarLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === currentPath) {
+            link.classList.remove('active'); // Luôn xóa active khỏi tất cả các link trước
+
+            const linkHref = link.getAttribute('href');
+
+            // So sánh xem URL của trang hiện tại có *kết thúc bằng* href của link không.
+            // Cách này hoạt động chính xác cho các file .html
+            if (currentPageUrl.endsWith(linkHref)) {
                 link.classList.add('active');
             }
         });
     }
+
+    // GỌI HÀM KHI TRANG TẢI XONG
+    setActiveSidebarItem();
 
     // Gọi hàm khi trang tải xong
     setActiveSidebarItem();
@@ -65,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Time filter buttons
     const timeFilters = document.querySelectorAll('.time-filters button');
     timeFilters.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             timeFilters.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             updateStats(this.textContent);
@@ -77,13 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
     caseCards.forEach(card => {
         const menuButton = card.querySelector('.fa-ellipsis-v');
         if (menuButton) {
-            menuButton.addEventListener('click', function(e) {
+            menuButton.addEventListener('click', function (e) {
                 e.stopPropagation();
                 console.log('Case menu clicked:', card.querySelector('h3').textContent);
             });
         }
 
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             console.log('Case clicked:', this.querySelector('h3').textContent);
         });
     });
@@ -91,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update stats based on time filter
     function updateStats(timeFilter) {
         console.log('Updating stats for:', timeFilter);
-        
+
         const stats = {
             'Theo tuần': { total: 20, pending: 6, received: 14 },
             'Theo tháng': { total: 85, pending: 25, received: 60 },
@@ -187,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // =============================================================
     const logoutBtn = document.querySelector('.logout-btn');
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', function(e) {
+        logoutBtn.addEventListener('click', function (e) {
             e.preventDefault();
             localStorage.removeItem('username');
             localStorage.removeItem('isAdmin');
