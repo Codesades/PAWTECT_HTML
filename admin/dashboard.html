@@ -3,43 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giao diện Quản lí Pawtect</title>
-    <link rel="stylesheet" href="../assets/css/admin.css">
-    <link rel="stylesheet" href="../assets/css/sidebar.css">
+    <title>Dashboard - Pawtect</title>
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <script src="../assets/js/include.js"></script>
-    
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
 </head>
-<body onload="includeHTML(function() { document.dispatchEvent(new Event('DOMContentLoaded')); })">
-    <div data-include="../components/sidebar_admin.html"></div>
-    <div data-include="../components/header_admin.html"></div>
+<body>
+    <!-- Header và Sidebar giữ nguyên -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div>
+            <a href="dashboard.html" class="logo-link">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
+                    <span>Pawtect</span>
+                </div>
+            </a>
+        </div>
+    </header>
 
-    <!-- Sidebar 
-    <aside class="sidebar">
+    <nav class="sidebar" id="sidebar-nav">
         <div class="sidebar-header">
-            <img src="../images/logo.png" alt="PAWTECT Logo" class="logo">
+            <h3>Menu</h3>
+            <button class="close-btn" id="close-btn">×</button>
         </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li class="active"><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="pending.html"><i class="fas fa-clock"></i> Chờ duyệt</a></li>
-                <li><a href="adoption.html"><i class="fas fa-paw"></i> Nhận nuôi</a></li>
-                <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Đóng góp</a></li>
-            </ul>
-        </nav>
-    </aside> 
-
-    
-    <!-- <header class="admin-header">
-        <div class="header-content">
-            <h1>Dashboard</h1>
-            <div class="user-info">
-                <span class="username">Admin</span>
-                <a href="../login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
-            </div>
-        </div>
-    </header> -->
+        <ul>
+            <li><a href="pending.html"><i class="fas fa-clock"></i> Bài đăng chờ duyệt</a></li>
+            <li><a href="adoption.html"><i class="fas fa-file-alt"></i> Đơn nhận nuôi</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Số liệu thống kê</a></li>
+            <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Quản lý thu chi</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
 
     <!-- Dashboard Content -->
     <div class="dashboard-container">
@@ -53,10 +50,11 @@
                     <button>Theo năm</button>
                 </div>
                 <div class="filter-group specific-filters" id="specific-filter-container">
-                    <!-- Filter buttons will be inserted here by JS -->
+                    <!-- JavaScript sẽ điền các nút filter vào đây -->
                 </div>
             </section>
             <section class="chart-section">
+                <!-- Phần biểu đồ giữ nguyên -->
                 <div class="chart-container">
                     <div class="donut-chart">
                         <div class="chart-center">
@@ -72,48 +70,20 @@
             </section>
         </aside>
 
-        <!-- Main Content -->
+        <!-- Main Content (Cột bên phải) -->
         <main class="main-content">
             <h2>Quản lí bài đăng</h2>
-            <div class="case-list">
-                <div class="case-card">
-                    <div class="card-header">
-                        <h3>CASE #109</h3>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="card-body">
-                        <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
-                        <p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p>
-                        <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="card-header">
-                        <h3>CASE #110</h3>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="card-body">
-                        <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
-                        <p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p>
-                        <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="card-header">
-                        <h3>CASE #111</h3>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="card-body">
-                        <p class="update-time">Cập nhật lúc 11:45 16/3/2023</p>
-                        <p><strong>Địa chỉ:</strong> 123 Đường LMN, Phường 4, Quận 5</p>
-                        <p><strong>Miêu tả:</strong> Chó Poodle đi lạc, có đeo vòng cổ màu đỏ.</p>
-                    </div>
-                </div>
+            <!-- THAY ĐỔI Ở ĐÂY: Thêm ID và xóa các card con -->
+            <div class="case-list" id="case-list-container">
+                <!-- JavaScript sẽ điền dữ liệu các case vào đây -->
             </div>
         </main>
     </div>
 
-    <script src="../assets/js/admin.js"></script>
-    <script src="../assets/js/sidebar.js"></script>
+    <!-- THAY ĐỔI Ở ĐÂY: Nhúng các file script cần thiết -->
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+
 </body>
-</html> 
+</html>

@@ -3,90 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quỹ đóng góp - Dashboard Pawtect</title>
-    <link rel="stylesheet" href="../css/admin.css">
+    <title>Quản lý thu chi - Dashboard Pawtect</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 </head>
 <body>
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="../images/logo.png" alt="PAWTECT Logo" class="logo">
+    <!-- Header và Sidebar giữ nguyên -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
         </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="pending.html"><i class="fas fa-clock"></i> Chờ duyệt</a></li>
-                <li><a href="adoption.html"><i class="fas fa-paw"></i> Nhận nuôi</a></li>
-                <li class="active"><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Đóng góp</a></li>
-            </ul>
-        </nav>
-    </aside>
-
-    <!-- Header -->
-    <header class="admin-header">
-        <div class="header-content">
-            <h1>Quỹ đóng góp</h1>
-            <div class="user-info">
-                <span class="username">Admin</span>
-                <a href="../login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
-            </div>
+        <div>
+            <a href="dashboard.html" class="logo-link">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
+                    <span>Pawtect</span>
+                </div>
+            </a>
         </div>
     </header>
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+        <ul>
+            <li><a href="pending.html"><i class="fas fa-clock"></i> Bài đăng chờ duyệt</a></li>
+            <li><a href="adoption.html"><i class="fas fa-file-alt"></i> Đơn nhận nuôi</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Số liệu thống kê</a></li>
+            <li><a href="donations.html"><i class="fas fa-hand-holding-heart"></i> Quản lý thu chi</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
 
     <!-- Main Content -->
     <main class="container single-column">
+        <!-- THAY ĐỔI Ở ĐÂY: Thêm data-type cho các nút -->
         <div class="filter-group top-filters">
-            <button class="active">Quỹ đóng góp</button>
-            <button>Quảng cáo</button>
-            <button>Gói Premium</button>
+            <button class="active" data-type="donation">Quỹ đóng góp</button>
+            <button data-type="ad">Quảng cáo</button>
+            <button data-type="premium">Gói Premium</button>
         </div>
 
         <div class="page-title-section">
-            <h2>Quỹ đóng góp</h2>
+            <!-- THAY ĐỔI Ở ĐÂY: Thêm ID cho tiêu đề -->
+            <h2 id="page-title">Quỹ đóng góp</h2>
             <div class="dropdown-filter">
                 <span>Tuần này</span>
                 <i class="fas fa-caret-down"></i>
             </div>
         </div>
 
-        <div class="transaction-list">
-            <div class="transaction-card">
-                <div class="info">
-                    <h3>Gói măm măm</h3>
-                    <p>Thanh toán lúc 12:50 16/3/2023</p>
-                    <p>Người gửi: Đặng Thị A</p>
-                </div>
-                <div class="amount">+50.000 vnd</div>
-            </div>
-            <div class="transaction-card">
-                <div class="info">
-                    <h3>Gói măm măm</h3>
-                    <p>Thanh toán lúc 12:50 16/3/2023</p>
-                    <p>Người gửi: Đặng Thị A</p>
-                </div>
-                <div class="amount">+50.000 vnd</div>
-            </div>
-            <div class="transaction-card">
-                <div class="info">
-                    <h3>Gói măm măm</h3>
-                    <p>Thanh toán lúc 12:50 16/3/2023</p>
-                    <p>Người gửi: Đặng Thị A</p>
-                </div>
-                <div class="amount">+50.000 vnd</div>
-            </div>
-            <div class="transaction-card">
-                <div class="info">
-                    <h3>Gói măm măm</h3>
-                    <p>Thanh toán lúc 12:50 16/3/2023</p>
-                    <p>Người gửi: Đặng Thị A</p>
-                </div>
-                <div class="amount">+50.000 vnd</div>
-            </div>
+        <!-- THAY ĐỔI Ở ĐÂY: Thêm ID và xóa các card con -->
+        <div class="transaction-list" id="transaction-list-container">
+            <!-- JavaScript sẽ điền dữ liệu vào đây -->
         </div>
     </main>
 
-    <script src="../js/admin.js"></script>
+    <!-- THAY ĐỔI Ở ĐÂY: Nhúng các file JS cần thiết -->
+    <script src="/assets/js/data-donation.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/donation.js"></script>
 </body>
-</html> 
+</html>
