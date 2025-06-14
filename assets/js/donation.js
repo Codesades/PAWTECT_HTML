@@ -1,66 +1,86 @@
-// assets/js/donation.js
-// Logic dành riêng cho trang donations.html
-
 document.addEventListener('DOMContentLoaded', () => {
-    const transactionListContainer = document.getElementById('transaction-list-container');
-    
-    // Nếu không phải trang Quản lý thu chi thì không làm gì
-    if (!transactionListContainer) {
-        return;
+
+    // ================================================
+    // LOGIC CHUNG CHO SIDEBAR
+    // ================================================
+    const menuIcon = document.getElementById('menu-icon');
+    const sidebarNav = document.getElementById('sidebar-nav');
+    const closeBtn = document.getElementById('close-btn');
+    const overlay = document.getElementById('overlay');
+
+    if (menuIcon && sidebarNav && closeBtn && overlay) {
+        menuIcon.addEventListener('click', () => sidebarNav.classList.add('active') || overlay.classList.add('active'));
+        closeBtn.addEventListener('click', () => sidebarNav.classList.remove('active') || overlay.classList.remove('active'));
+        overlay.addEventListener('click', () => sidebarNav.classList.remove('active') || overlay.classList.remove('active'));
     }
 
-    const filterButtons = document.querySelectorAll('.top-filters button');
-    const pageTitle = document.getElementById('page-title');
+    // ================================================
+    // LOGIC MỚI CHO TRANG ỦNG HỘ (CHỌN NHIỀU MỤC)
+    // ================================================
+    const donationPackages = document.querySelectorAll('.donation-package');
+    const donationMessage = document.getElementById('donation-message');
+    const checkoutButton = document.getElementById('checkout-button');
+    
+    // Chỉ thực thi logic này nếu các phần tử cần thiết tồn tại
+    if (donationPackages.length > 0 && donationMessage && checkoutButton) {
+        
+        let totalAmount = 0;
+        const defaultMessage = "Bạn chưa chọn gói ủng hộ nào, hãy ủng hộ ngay!";
 
-    // Hàm để render danh sách giao dịch ra HTML
-    function renderTransactionList(transactions) {
-        transactionListContainer.innerHTML = ''; // Xóa nội dung cũ
-
-        if (transactions.length === 0) {
-            transactionListContainer.innerHTML = '<p class="empty-message">Không có giao dịch nào.</p>';
-            return;
+        // Hàm trợ giúp: Chuyển chuỗi "50.000VND" thành số 50000
+        function parseAmount(amountString) {
+            if (!amountString) return 0;
+            const numberString = amountString.replace(/\./g, '').replace('VND', '');
+            return parseInt(numberString, 10) || 0;
         }
 
-        let htmlContent = '';
-        transactions.forEach(trans => {
-            htmlContent += `
-                <div class="transaction-card">
-                    <div class="info">
-                        <h3>${trans.title}</h3>
-                        <p>${trans.timestamp}</p>
-                        <p>Người gửi: ${trans.sender}</p>
-                    </div>
-                    <div class="amount">${trans.amount}</div>
-                </div>
-            `;
+        // Hàm trợ giúp: Chuyển số 150000 thành chuỗi "150.000VND"
+        function formatAmount(amountNumber) {
+            return amountNumber.toLocaleString('vi-VN') + 'VND';
+        }
+        
+        // Hàm cập nhật giao diện hộp thông tin ủng hộ
+        function updateDonationBox() {
+            if (totalAmount === 0) {
+                donationMessage.innerHTML = defaultMessage;
+                checkoutButton.disabled = true;
+            } else {
+                donationMessage.innerHTML = `Tổng cộng: <strong>${formatAmount(totalAmount)}</strong>`;
+                checkoutButton.disabled = false;
+            }
+        }
+        
+        // Gán sự kiện click cho mỗi gói ủng hộ
+        donationPackages.forEach(pkg => {
+            pkg.addEventListener('click', () => {
+                // Lấy giá trị của gói và chuyển thành số
+                const packageValue = parseAmount(pkg.dataset.amount);
+
+                // Bật/tắt trạng thái 'selected'
+                pkg.classList.toggle('selected');
+
+                // Nếu gói vừa được chọn (thêm vào)
+                if (pkg.classList.contains('selected')) {
+                    totalAmount += packageValue;
+                } else { // Nếu gói vừa được bỏ chọn (trừ đi)
+                    totalAmount -= packageValue;
+                }
+                
+                // Cập nhật lại giao diện
+                updateDonationBox();
+            });
         });
-        transactionListContainer.innerHTML = htmlContent;
+
+        // Xử lý sự kiện khi nhấn nút Thanh toán
+        checkoutButton.addEventListener('click', () => {
+            if (totalAmount > 0) {
+                alert(`Cảm ơn bạn đã ủng hộ tổng cộng ${formatAmount(totalAmount)}!\nChức năng thanh toán đang được phát triển.`);
+            }
+        });
+        
+        // Khởi tạo giao diện lần đầu
+        updateDonationBox();
     }
-
-    // Hàm xử lý khi click vào các nút filter
-    function handleFilterClick(event) {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        const clickedButton = event.currentTarget;
-        clickedButton.classList.add('active');
-
-        const type = clickedButton.dataset.type;
-        const title = clickedButton.textContent;
-        
-        pageTitle.textContent = title;
-        
-        // Lọc dữ liệu từ biến toàn cục donationData (trong data-donation.js)
-        const filteredTransactions = donationData.transactions.filter(t => t.type === type);
-        
-        renderTransactionList(filteredTransactions);
-    }
-
-    // Gắn sự kiện click cho các nút filter
-    filterButtons.forEach(button => {
-        button.addEventListener('click', handleFilterClick);
-    });
-
-    // --- KHỞI TẠO BAN ĐẦU ---
-    // Hiển thị các giao dịch "Quỹ đóng góp" khi tải trang
-    const initialTransactions = donationData.transactions.filter(t => t.type === 'donation');
-    renderTransactionList(initialTransactions);
+    
+    console.log('Trang ủng hộ Pawtect đã tải xong với logic mới!');
 });

@@ -1,70 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawtect - Cộng đồng yêu thú cưng</title>
     <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="/assets/css/admin.css">
-    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <script src="/assets/js/include.js"></script>
-    <script src="/assets/js/sidebar.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-    <title>Pawtect UI</title>
-</head>
-<body onload="includeHTML(function() { document.dispatchEvent(new Event('DOMContentLoaded')); })">
-  <div data-include="../components/sidebar_admin.html"></div>
-  <div data-include="../components/header_admin.html"></div>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </div>
+        </a>
+        
+        <div class="user-info">
+            <span>chào buổi sáng</span>
+            <a href="#">user! <img src="https://i.imgur.com/vB5zU6E.png" alt="User Icon" class="user-icon"></a>
+        </div>
+    </header>
 
-    <section class="hero">
-        <img src="assets/images/Anh_Meo.jpg" alt="Cute animal" />
-        <div class="join-cta">
-            <h2>Tham gia cộng đồng PAWTECT ngay!</h2>
-            <a href="#" class="cta-button">Tham gia ngay!</a>
+    <!-- SIDEBAR & OVERLAY -->
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Menu</h3>
+            <button class="close-btn" id="close-btn">x</button>
         </div>
-    </section>
+        <ul>
+            <li><a href="#"><i class="fas fa-flag"></i> BÁO CÁO CA CỨU HỘ</a></li>
+            <li><a href="#"><i class="fas fa-hand-holding-heart"></i> TÌM BẠN ĐỒNG HÀNH</a></li>
+            <li><a href="#"><i class="fas fa-user-md"></i> KẾT NỐI VỚI THÚ Y</a></li>
+            <li><a href="#"><i class="fas fa-star"></i> KHÁM PHÁ PREMIUM</a></li>
+            <li><a href="donation.html"><i class="fas fa-donate"></i> Ủng hộ Pawtect</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- MAIN PAGE CONTENT WRAPPER -->
+    <div class="main-page-content">
+        <main>
+            <!-- HERO SECTION -->
+            <section class="hero-section placeholder">
+                <div class="hero-content">
+                    <h1>Tham gia cộng đồng PAWTECT ngay!</h1>
+                    <button class="btn btn-light">Tham gia ngay!</button>
+                </div>
+            </section>
 
-    <section class="menu">
-        <h3>DANH MỤC</h3>
-        <div class="button-group">
-            <a href="#" class="menu-button">BÁO CÁO CỨU HỘ</a>
-            <a href="#" class="menu-button">TÌM BẠN ĐỒNG HÀNH</a>
-            <a href="#" class="menu-button">KẾT NỐI VỚI THÚ Y</a>
-            <a href="#" class="menu-button">KHÁM PHÁ PREMIUM</a>
-        </div>
-    </section>
+            <!-- CATEGORIES -->
+            <section class="categories-section">
+                <h2 class="section-title">DANH MỤC</h2>
+                <div class="category-grid">
+                    <a href="#" class="category-card">BÁO CÁO CA CỨU HỘ</a>
+                    <a href="#" class="category-card">TÌM BẠN ĐỒNG HÀNH</a>
+                    <a href="#" class="category-card">KẾT NỐI VỚI THÚ Y</a>
+                    <a href="#" class="category-card">KHÁM PHÁ PREMIUM</a>
+                </div>
+            </section>
+            
+            <!-- NEARBY RESCUE -->
+            <section class="scroll-section">
+                <h2 class="section-title">CA CỨU HỘ GẦN TÔI</h2>
+                <div class="scroll-container">
+                    <div class="rescue-card">
+                        <img src="https://i.imgur.com/u3tT559.jpg" alt="Chó cần cứu hộ">
+                        <div class="rescue-card-info">
+                            <span class="rescue-id">#109</span>
+                            <span class="rescue-distance">Cách bạn 1.0km</span>
+                            <button class="btn btn-view">Xem ngay</button>
+                        </div>
+                    </div>
+                    <div class="rescue-card">
+                        <div class="rescue-card-placeholder"></div>
+                        <div class="rescue-card-info">
+                            <span class="rescue-id">#109</span>
+                            <span class="rescue-distance">Cách bạn 1.0km</span>
+                            <button class="btn btn-view">Xem ngay</button>
+                        </div>
+                    </div>
+                     <div class="rescue-card">
+                        <img src="https://i.imgur.com/u3tT559.jpg" alt="Chó cần cứu hộ">
+                        <div class="rescue-card-info">
+                            <span class="rescue-id">#110</span>
+                            <span class="rescue-distance">Cách bạn 1.5km</span>
+                            <button class="btn btn-view">Xem ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
 
-    <section class="nearby-animals">
-        <h3>CA CỨU HỘ GẦN TÔI</h3>
-        <div class="animal-card">
-            <img src="assets/images/Anh_Cho.jpg" alt="Animal 1">
-            <p>#109</p>
-            <a href="#" class="cta-button">Xem ngay!</a>
-        </div>
-        <div class="animal-card">
-            <img src="assets/images/Anh_Cho.jpg" alt="Animal 2">
-            <p>#109</p>
-            <a href="#" class="cta-button">Xem ngay!</a>
-        </div>
-    </section>
+            <!-- YOU MAY BE INTERESTED -->
+            <section class="scroll-section">
+                <h2 class="section-title">CÓ THỂ BẠN QUAN TÂM</h2>
+                <div class="scroll-container">
+                    <div class="interest-card placeholder">
+                        <h3>THÚ Y PET ZONE</h3>
+                        <p>Phòng khám Thúy Y Pet Zone</p>
+                        <p>Địa chỉ: 987-989 Tạ Quang Bửu, P.6, Q.8</p>
+                        <p>Hotline: 028.6298.9867</p>
+                        <p>Hoạt động 24/24</p>
+                        <button class="btn btn-light">Tham gia ngay!</button>
+                    </div>
+                    <div class="interest-card placeholder">
+                         <h3>THÚ Y PET ZONE 2</h3>
+                        <p>Phòng khám Thúy Y Pet Zone 2</p>
+                        <button class="btn btn-light">Tham gia ngay!</button>
+                    </div>
+                </div>
+                 <div class="pagination-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
 
-    <section class="recommended">
-        <h3>CÓ THỂ BẠN QUAN TÂM</h3>
-        <div class="recommendation">
-            <img src="assets/images/Anh_Cho.jpg"" alt="Pet Zone">
-            <p>THÚ Y PET ZONE</p>
-            <a href="#" class="cta-button">Tham gia ngay!</a>
-        </div>
-    </section>
+             <!-- PARTNERS -->
+            <section class="scroll-section">
+                <h2 class="section-title">ĐƠN VỊ ĐỒNG HÀNH</h2>
+                <div class="scroll-container">
+                    <div class="partner-logo"><img src="https://i.imgur.com/2s4fS3C.png" alt="have paws"></div>
+                    <div class="partner-logo"><img src="https://i.imgur.com/1G8Vl0l.png" alt="Royal Canin"></div>
+                    <div class="partner-logo"><img src="https://i.imgur.com/lO7qD52.png" alt="Natural Core"></div>
+                    <div class="partner-logo"><img src="https://i.imgur.com/vHqB3qS.png" alt="Catsrang"></div>
+                    <div class="partner-logo"><img src="https://i.imgur.com/1G8Vl0l.png" alt="Royal Canin"></div>
+                </div>
+                 <div class="pagination-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+        </main>
+    </div>
 
-    <section class="partners">
-        <h3>ĐƠN VỊ ĐỒNG HÀNH</h3>
-        <div class="partner-logo">
-            <img src="assets/images/logo-placeholder.png" alt="Partner 1">
-            <img src="assets/images/logo-placeholder.png" alt="Partner 2">
-            <img src="assets/images/logo-placeholder.png" alt="Partner 3">
-        </div>
-    </section>
+    <script src="assets/js/home.js"></script>
 </body>
 </html>
