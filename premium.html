@@ -9,32 +9,54 @@
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/sidebar.css">
     <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/user_header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 
 <body>
-    <!-- Placeholder cho sidebar của User -->
-    <div id="user-navbar-placeholder"></div>
+   <!-- HEADER -->
+   <header>
+    <div class="menu-icon" id="menu-icon">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <a href="home.html" class="logo-link">
+        <div class="logo">
+            <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+        </div>
+    </a>
+    
+    <div class="user-info">
+        <a href="#">
+            <div class="user-greeting">
+                <span>chào buổi sáng</span>
+                <strong class="user-name">user!</strong>
+            </div>
+            <i class="fas fa-user user-icon-shape"></i>
+        </a>
+    </div>
+</header>
 
-    <!-- Header dành cho User -->
-    <header class="user-header">
-        <div class="menu-icon" id="menu-icon">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div>
-            <a href="#" class="logo-link">
-                <div class="logo">
-                    <img src="/assets/images/logo.png" alt="Pawtect Logo">
-                    <span>Pawtect</span>
-                </div>
-            </a>
-        </div>
-        <div class="user-greeting">
-            <span>chào buổi sáng <strong>user!</strong></span>
-            <i class="fas fa-user-circle"></i>
-        </div>
-    </header>
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar-nav">
+    <div class="sidebar-header">
+        <a href="home.html" class="logo-link">
+            <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+        </a>
+        <!-- THAY ĐỔI Ở ĐÂY: Thêm lại nút đóng -->
+        <button class="close-btn" id="close-btn">×</button>
+    </div>
+    <ul>
+        <li><a href="donation.html">Ủng hộ quỹ Pawtect</a></li>
+        <li><a href="report-location.html">Báo cáo cứu hộ</a></li>
+        <li><a href="find_friends.html">Tìm bạn đồng hành</a></li>
+        <li><a href="premium.html">Khám phá premium</a></li>
+        <li><a href="vets.html">Kết nối với Thú y</a></li>
+        <li><a href="user.html">Bài đăng của tôi</a></li>
+    </ul>
+</nav>
+<div class="overlay" id="overlay"></div>
 
     <!-- Nội dung chính của trang -->
     <main class="container-user">
