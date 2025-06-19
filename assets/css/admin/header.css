@@ -134,3 +134,34 @@ nav.sidebar ul {
     background-color: #fff1f0; /* Màu đỏ rất nhạt */
     color: #cf1322; /* Màu đỏ đậm */
 }
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-left: 20px;
+}
+
+.logo img {
+    height: 30px;
+}
