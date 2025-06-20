@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawtect - Cộng đồng yêu thú cưng</title>
     <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/home_2.css">
+    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/user_header.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,6 @@
             <a href="#">
                 <div class="user-greeting">
                     <span>chào buổi sáng</span>
-                    <br>
                     <strong class="user-name">user!</strong>
                 </div>
                 <i class="fas fa-user user-icon-shape"></i>
@@ -44,7 +43,6 @@
             <a href="home.html" class="logo-link">
                 <img src="assets/images/header_logo.png" alt="Pawtect Logo">
             </a>
-            <!-- THAY ĐỔI Ở ĐÂY: Thêm lại nút đóng -->
             <button class="close-btn" id="close-btn">×</button>
         </div>
         <ul>
@@ -63,10 +61,9 @@
         <main>
             <!-- HERO SECTION -->
             <section class="hero-section">
-                
                 <div class="hero-content">
                     <h1>Ủng hộ cộng đồng PAWTECT ngay!</h1>
-                    <button class="btn btn-light">Ủng hộ ngay!</button>
+                    <button class="btn btn-light"><a href="donation.html">Ủng hộ ngay!</a></button>
                 </div>
             </section>
 
@@ -75,9 +72,9 @@
                 <h2 class="section-title">DANH MỤC</h2>
                 <div class="category-grid">
                     <a href="report-location.html" class="category-card">BÁO CÁO CA CỨU HỘ</a>
-                    <a href="#" class="category-card">TÌM BẠN ĐỒNG HÀNH</a>
-                    <a href="#" class="category-card">KẾT NỐI VỚI THÚ Y</a>
-                    <a href="#" class="category-card">KHÁM PHÁ PREMIUM</a>
+                    <a href="find_friends.html" class="category-card">TÌM BẠN ĐỒNG HÀNH</a>
+                    <a href="vets.html" class="category-card">KẾT NỐI VỚI THÚ Y</a>
+                    <a href="premium.html" class="category-card">KHÁM PHÁ PREMIUM</a>
                 </div>
             </section>
             
@@ -121,7 +118,8 @@
             <section class="scroll-section">
                 <h2 class="section-title">CÓ THỂ BẠN QUAN TÂM</h2>
                 <div class="scroll-container">
-                    <div class="interest-card placeholder">
+                    <!-- THAY ĐỔI Ở ĐÂY: Xóa placeholder và giữ vet-zone-1 -->
+                    <div class="interest-card vet-zone-1">
                         <h3>THÚ Y PET ZONE</h3>
                         <p>Phòng khám Thú Y Pet Zone</p>
                         <p>Địa chỉ: 987-989 Tạ Quang Bửu, P.6, Q.8</p>
@@ -129,7 +127,8 @@
                         <p>Hoạt động 24/24</p>
                         <button class="btn btn-light">Tới ngay!</button>
                     </div>
-                    <div class="interest-card placeholder">
+                    <!-- THAY ĐỔI Ở ĐÂY: Xóa placeholder và dùng vet-zone-2 -->
+                    <div class="interest-card vet-zone-2">
                          <h3>THÚ Y PET ZONE 2</h3>
                         <p>Phòng khám Thú Y Pet Zone 2</p>
                         <button class="btn btn-light">Tới ngay!</button>
@@ -148,9 +147,9 @@
                 <div class="scroll-container">
                     <div class="partner-logo"><img src="assets/images/have_paws.png" alt="have paws"></div>
                     <div class="partner-logo"><img src="assets/images/Royal_Canin.png" alt="Royal Canin"></div>
-                    <div class="partner-logo"><img src="assets/images/Natural_Core.png"" alt="Natural Core"></div>
-                    <div class="partner-logo"><img src="assets/images/Cat_srang.png"" alt="Catsrang"></div>
-                    <div class="partner-logo"><img src="assets/images/Pet_Zone.png"" alt="Pet Zone"></div>
+                    <div class="partner-logo"><img src="assets/images/Natural_Core.png" alt="Natural Core"></div>
+                    <div class="partner-logo"><img src="assets/images/Cat_srang.png" alt="Catsrang"></div>
+                    <div class="partner-logo"><img src="assets/images/Pet_Zone.png" alt="Pet Zone"></div>
                 </div>
                  <div class="pagination-dots">
                     <span class="dot active"></span>
@@ -161,6 +160,7 @@
         </main>
     </div>
 
+    <script src="assets/js/user-navbar.js"></script>
     <script src="assets/js/home.js"></script>
 </body>
 </html>
