@@ -2,12 +2,14 @@
 header {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    /* THAY ĐỔI Ở ĐÂY: Đồng bộ padding với admin header */
+    padding: 15px 20px;
     background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color); /* Thêm lại border để có cảm giác tương tự admin */
 }
 
 .menu-icon {
-    font-size: 2.5rem;
+    font-size: 24px;
     color: var(--primary-color);
     cursor: pointer;
     margin-right: 15px;
@@ -19,7 +21,8 @@ header {
 }
 
 .logo img {
-    height: 38px;
+    /* THAY ĐỔI Ở ĐÂY: Đồng bộ chiều cao logo */
+    height: 30px;
 }
 
 .user-info {
@@ -56,7 +59,7 @@ header {
 
 /* --- SIDEBAR --- */
 nav.sidebar {
-    width: var(--sidebar-width);
+    width: 280px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -73,24 +76,24 @@ nav.sidebar.active {
 }
 
 .sidebar-header {
-    padding: 20px; /* Điều chỉnh padding */
+    padding: 15px 20px;
     border-bottom: 1px solid var(--border-color);
     display: flex;
-    justify-content: space-between; /* THAY ĐỔI: Đẩy logo và nút về 2 phía */
+    justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
 }
 
-.sidebar-header .logo-link img {
-    height: 35px;
+.sidebar-header img {
+    height: 30px;
 }
 
-/* THAY ĐỔI Ở ĐÂY: Thêm style cho nút đóng */
 .close-btn {
     background: none;
     border: none;
-    font-size: 2.5rem; /* Kích thước phù hợp */
+    font-size: 28px;
     line-height: 1;
-    font-weight: 300; /* Nét mảnh cho thanh lịch */
+    font-weight: 300;
     color: #aaa;
     cursor: pointer;
     transition: color 0.2s ease;

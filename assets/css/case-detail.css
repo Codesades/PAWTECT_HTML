@@ -1,0 +1,93 @@
+    /* --- TRANG CHI TIẾT CA CỨU HỘ (CASE-DETAIL.HTML) --- */
+.case-detail-container {
+    background-color: var(--primary-color);
+    min-height: calc(100vh - 61px); /* Chiều cao tối thiểu = màn hình - header */
+    color: var(--white-color);
+    padding: 0 15px 30px 15px; /* Bỏ padding trên cùng vì đã có header */
+}
+
+/* Ghi đè lại màu chữ h2 cho trang này */
+.case-detail-container .page-header-user h2,
+.case-detail-container .page-header-user .back-arrow {
+    color: var(--white-color);
+}
+
+.case-content {
+    text-align: center;
+}
+
+.case-id {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 20px 0 5px 0;
+}
+
+.case-update-time {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.case-info {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.case-image-slider {
+    margin-bottom: 30px;
+}
+.case-image-slider .image-wrapper {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.case-image-slider img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.slider-pagination-detail {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.slider-pagination-detail .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.slider-pagination-detail .dot.active {
+    background-color: #fff;
+}
+
+
+.case-status-section .status-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.btn-action {
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 14px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.page-navigation {
+    padding-top: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}

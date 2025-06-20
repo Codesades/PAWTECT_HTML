@@ -1,56 +1,4 @@
-/* assets/css/user.css */
 
-/* Header của User */
-a {
-    text-decoration: none;
-    color: inherit;
-    /* Giữ nguyên màu chữ của thẻ a */
-}
-
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--text-color);
-    margin-left: 20px;
-}
-
-.logo img {
-    height: 30px;
-}
-
-
-/* Header của User (ĐÃ SỬA) */
-.user-header {
-    display: flex;
-    align-items: center;
-    /* Chỉ cần căn giữa theo chiều dọc */
-    gap: 20px;
-    /* Tạo khoảng cách giữa nút menu và logo */
-    padding: 15px;
-    background-color: var(--white-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.user-greeting {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    color: #555;
-    margin-left: auto;
-    /* Dòng code "thần thánh" đẩy phần tử này về hết bên phải */
-}
-
-/* ... các style khác của user giữ nguyên ... */
-
-.user-greeting i {
-    font-size: 24px;
-    color: var(--primary-color);
-}
 
 
 /* Layout chung của trang user (ĐÃ SỬA) */
@@ -434,3 +382,5 @@ a {
     background-size: cover;
     background-position: center;
 }
+
+

@@ -7,10 +7,13 @@
     <title>Kết nối với Thú Y - Pawtect</title>
     <!-- Nhúng các file CSS cần thiết -->
     <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/sidebar.css">
     <link rel="stylesheet" href="assets/css/user.css">
     <link rel="stylesheet" href="assets/css/user_header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 
@@ -20,15 +23,15 @@
         <div class="menu-icon" id="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
-        
+
         <a href="home.html" class="logo-link">
             <div class="logo">
                 <img src="assets/images/header_logo.png" alt="Pawtect Logo">
             </div>
         </a>
-        
+
         <div class="user-info">
-            <a href="#">
+            <a href="user.html">
                 <div class="user-greeting">
                     <span>chào buổi sáng</span>
                     <strong class="user-name">user!</strong>
@@ -61,9 +64,13 @@
     <!-- Nội dung chính của trang -->
     <main class="container-user">
         <div class="page-header-user">
-            <a href="#" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
-            <h2>Kết nối với Thú Y</h2>
+            <div class="page-navigation">
+                <a href="home.html" class="back-link">
+                    <h2>← Kết nối với Thú Y</h2>
+                </a>
+            </div>
         </div>
+
 
         <h1 class="page-main-title">Phòng khám<br>Thú Y gần bạn</h1>
 
@@ -83,6 +90,7 @@
     <script src="assets/js/user-navbar.js"></script>
     <script src="assets/js/vets.js"></script>
 </body>
+
 </html>
 </body>
 
