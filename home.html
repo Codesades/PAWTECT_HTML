@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +12,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-     <!-- HEADER -->
-     <header>
+    <!-- HEADER -->
+    <header>
         <div class="menu-icon" id="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
-        
+
         <a href="home.html" class="logo-link">
             <div class="logo">
                 <img src="assets/images/header_logo.png" alt="Pawtect Logo">
             </div>
         </a>
-        
+
         <div class="user-info">
-            <a href="#">
+            <a href="user.html">
                 <div class="user-greeting">
                     <span>chào buổi sáng</span>
                     <strong class="user-name">user!</strong>
@@ -55,7 +58,7 @@
         </ul>
     </nav>
     <div class="overlay" id="overlay"></div>
-    
+
     <!-- MAIN PAGE CONTENT WRAPPER -->
     <div class="main-page-content">
         <main>
@@ -77,71 +80,37 @@
                     <a href="premium.html" class="category-card">KHÁM PHÁ PREMIUM</a>
                 </div>
             </section>
-            
-            <!-- NEARBY RESCUE -->
+
+            <!-- NEARBY RESCUE (ĐÃ CẬP NHẬT) -->
             <section class="scroll-section">
                 <h2 class="section-title">CA CỨU HỘ GẦN TÔI</h2>
-                <div class="scroll-container">
-                    <div class="rescue-card">
-                        <img src="assets/images/Anh_Cho.jpg" alt="Chó cần cứu hộ">
-                        <div class="rescue-card-info">
-                            <span class="rescue-id">#109</span>
-                            <span class="rescue-distance">Cách bạn 1.0km</span>
-                            <button class="btn btn-view">Xem ngay</button>
-                        </div>
-                    </div>
-                    <div class="rescue-card">
-                        <img src="assets/images/Anh_Cho.jpg" alt="Chó cần cứu hộ">
-                        <div class="rescue-card-info">
-                            <span class="rescue-id">#109</span>
-                            <span class="rescue-distance">Cách bạn 1.0km</span>
-                            <button class="btn btn-view">Xem ngay</button>
-                        </div>
-                    </div>
-                     <div class="rescue-card">
-                        <img src="assets/images/Anh_Cho.jpg" alt="Chó cần cứu hộ">
-                        <div class="rescue-card-info">
-                            <span class="rescue-id">#110</span>
-                            <span class="rescue-distance">Cách bạn 1.5km</span>
-                            <button class="btn btn-view">Xem ngay</button>
-                        </div>
-                    </div>
+
+                <!-- THAY ĐỔI Ở ĐÂY: Thêm ID và xóa các card con -->
+                <div class="scroll-container" id="nearby-rescue-container">
+                    <!-- JavaScript sẽ điền dữ liệu các ca cứu hộ vào đây -->
                 </div>
+
                 <div class="pagination-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                    <!-- JavaScript sẽ tự động tạo các dấu chấm -->
                 </div>
             </section>
 
-            <!-- YOU MAY BE INTERESTED -->
+            <!-- YOU MAY BE INTERESTED (ĐÃ CẬP NHẬT) -->
             <section class="scroll-section">
                 <h2 class="section-title">CÓ THỂ BẠN QUAN TÂM</h2>
-                <div class="scroll-container">
-                    <!-- THAY ĐỔI Ở ĐÂY: Xóa placeholder và giữ vet-zone-1 -->
-                    <div class="interest-card vet-zone-1">
-                        <h3>THÚ Y PET ZONE</h3>
-                        <p>Phòng khám Thú Y Pet Zone</p>
-                        <p>Địa chỉ: 987-989 Tạ Quang Bửu, P.6, Q.8</p>
-                        <p>Hotline: 028.6298.9867</p>
-                        <p>Hoạt động 24/24</p>
-                        <button class="btn btn-light">Tới ngay!</button>
-                    </div>
-                    <!-- THAY ĐỔI Ở ĐÂY: Xóa placeholder và dùng vet-zone-2 -->
-                    <div class="interest-card vet-zone-2">
-                         <h3>THÚ Y PET ZONE 2</h3>
-                        <p>Phòng khám Thú Y Pet Zone 2</p>
-                        <button class="btn btn-light">Tới ngay!</button>
-                    </div>
+
+                <!-- THAY ĐỔI Ở ĐÂY: Thêm ID và xóa các card con -->
+                <div class="scroll-container" id="interested-container">
+                    <!-- JavaScript sẽ điền dữ liệu các phòng khám vào đây -->
                 </div>
-                 <div class="pagination-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+
+                <!-- THAY ĐỔI Ở ĐÂY: Xóa các dấu chấm cứng -->
+                <div class="pagination-dots">
+                    <!-- JavaScript sẽ tự động tạo các dấu chấm -->
                 </div>
             </section>
 
-             <!-- PARTNERS -->
+            <!-- PARTNERS -->
             <section class="scroll-section">
                 <h2 class="section-title">ĐƠN VỊ ĐỒNG HÀNH</h2>
                 <div class="scroll-container">
@@ -151,7 +120,7 @@
                     <div class="partner-logo"><img src="assets/images/Cat_srang.png" alt="Catsrang"></div>
                     <div class="partner-logo"><img src="assets/images/Pet_Zone.png" alt="Pet Zone"></div>
                 </div>
-                 <div class="pagination-dots">
+                <div class="pagination-dots">
                     <span class="dot active"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
@@ -161,6 +130,10 @@
     </div>
 
     <script src="assets/js/user-navbar.js"></script>
+    <script src="assets/js/data.js"></script> <!-- THÊM DÒNG NÀY -->
+    <script src="assets/js/data-vets.js"></script> <!-- THÊM DÒNG NÀY -->
     <script src="assets/js/home.js"></script>
+
 </body>
+
 </html>

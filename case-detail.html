@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết nối với Thú Y - Pawtect</title>
-    <!-- Nhúng các file CSS cần thiết -->
+    <title>Tình trạng cứu hộ - Pawtect</title>
+
     <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/user_header.css">
+    <link rel="stylesheet" href="assets/css/case-detail.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 
+
 <body>
-    <!-- HEADER -->
+    <!-- Placeholder cho sidebar sẽ được chèn vào đây bởi JS -->
+    <div id="user-navbar-placeholder"></div>
+
+<!-- HEADER -->
     <header>
         <div class="menu-icon" id="menu-icon">
             <i class="fas fa-bars"></i>
@@ -47,7 +51,6 @@
             <a href="home.html" class="logo-link">
                 <img src="assets/images/header_logo.png" alt="Pawtect Logo">
             </a>
-            <!-- THAY ĐỔI Ở ĐÂY: Thêm lại nút đóng -->
             <button class="close-btn" id="close-btn">×</button>
         </div>
         <ul>
@@ -61,37 +64,16 @@
     </nav>
     <div class="overlay" id="overlay"></div>
 
-    <!-- Nội dung chính của trang -->
-    <main class="container-user">
-        <div class="page-header-user">
-            <div class="page-navigation">
-                <a href="home.html" class="back-link">
-                    <h2>← Kết nối với Thú Y</h2>
-                </a>
-            </div>
-        </div>
-
-
-        <h1 class="page-main-title">Phòng khám<br>Thú Y gần bạn</h1>
-
-        <!-- Slider chứa các phòng khám (xóa các card con) -->
-        <section class="vet-clinic-slider" id="vet-slider">
-            <!-- JavaScript sẽ tự động chèn các phòng khám vào đây -->
-        </section>
-
-        <!-- Dấu chấm điều hướng cho slider -->
-        <div class="slider-pagination" id="slider-pagination">
-            <!-- JavaScript sẽ tự động tạo các dấu chấm ở đây -->
-        </div>
+    <!-- Nội dung chính của trang chi tiết -->
+    <main class="case-detail-container" id="case-detail-container">
+        <!-- JS sẽ điền toàn bộ nội dung vào đây -->
+        <!-- Ví dụ về giao diện khi đang tải -->
+        <p class="loading-message">Đang tải thông tin ca cứu hộ...</p>
     </main>
 
     <!-- Nhúng các file JS cần thiết -->
-    <script src="assets/js/data-vets.js"></script> <!-- FILE DỮ LIỆU MỚI -->
+    <script src="assets/js/data.js"></script> <!-- Dữ liệu các case -->
     <script src="assets/js/user-navbar.js"></script>
-    <script src="assets/js/vets.js"></script>
+    <script src="assets/js/case-detail.js"></script>
 </body>
-
-</html>
-</body>
-
 </html>

@@ -34,16 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hàm xử lý khi đăng nhập thành công
+     // Hàm xử lý khi đăng nhập thành công (ĐÃ CẬP NHẬT)
     function handleSuccessfulLogin(user) {
-        // 5. Kiểm tra quyền hạn (role) của người dùng
+        // 5. Lưu thông tin người dùng vào localStorage hoặc sessionStorage
+        // Điều này rất hữu ích để các trang khác biết ai đang đăng nhập.
+        // sessionStorage: dữ liệu mất khi đóng tab.
+        // localStorage: dữ liệu còn mãi cho đến khi bị xóa.
+        sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+
+        // 6. Kiểm tra quyền hạn (role) và chuyển hướng tương ứng
         if (user.role === 'admin') {
-            // Nếu là admin, chuyển hướng đến trang dashboard
+            // Nếu là admin, chuyển hướng đến trang dashboard của admin
             // alert('Đăng nhập quản trị viên thành công!');
-            window.location.href = '/admin/dashboard.html'; // Chuyển hướng
+            window.location.href = '/admin/dashboard.html'; // Đường dẫn đến trang dashboard của admin
+        } else if (user.role === 'user') {
+            // Nếu là user thường, chuyển hướng đến trang chủ của user
+            // alert(`Chào mừng ${user.email}!`);
+            window.location.href = '/home.html'; // Đường dẫn đến trang chủ của user
         } else {
-            // Nếu là user thường, thông báo không có quyền
-            displayError('Bạn không có quyền truy cập trang quản trị.');
+            // Trường hợp có role khác không xác định
+            displayError('Vai trò người dùng không xác định.');
         }
     }
 

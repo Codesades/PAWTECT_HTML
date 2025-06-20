@@ -85,11 +85,13 @@
 .categories-section {
     margin-bottom: 30px;
 }
+
 .category-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
+
 .category-card {
     background-color: var(--primary-color);
     color: var(--light-color);
@@ -104,6 +106,7 @@
     min-height: 100px;
     transition: background-color 0.2s;
 }
+
 .category-card:hover {
     background-color: #009ac1;
 }
@@ -112,10 +115,12 @@
 .scroll-section {
     margin-bottom: 30px;
 }
+
 .scroll-container {
     display: flex;
     gap: 20px;
 }
+
 .pagination-dots {
     display: none;
 }
@@ -130,26 +135,33 @@
     color: var(--light-color);
     min-width: 0;
 }
-.rescue-card img, .rescue-card-placeholder {
+
+.rescue-card img,
+.rescue-card-placeholder {
     width: 110px;
     height: 130px;
     object-fit: cover;
 }
+
 .rescue-card-placeholder {
     background-color: #e0e0e0;
     border: 2px dashed #ccc;
 }
+
 .rescue-card-info {
     padding: 15px;
     display: flex;
     flex-direction: column;
 }
+
 .rescue-card-info span {
     font-size: 1rem;
 }
+
 .rescue-card-info .rescue-id {
     font-weight: 700;
 }
+
 .btn-view {
     margin-top: auto;
     background-color: var(--light-color);
@@ -187,7 +199,7 @@
     z-index: 1;
 }
 
-.interest-card > * {
+.interest-card>* {
     position: relative;
     z-index: 2;
 }
@@ -206,12 +218,8 @@
     margin-top: auto;
 }
 
-.interest-card.vet-zone-1 {
+.interest-card.vet-zone {
     background-image: url('../images/vet.jpg');
-}
-
-.interest-card.vet-zone-2 {
-    background-image: url('../images/vet.jpg'); 
 }
 
 /* --- PARTNER SECTION --- */
@@ -226,6 +234,7 @@
     padding: 15px;
     border: 1px solid #eee;
 }
+
 .partner-logo img {
     max-width: 100%;
     max-height: 100%;
@@ -239,45 +248,91 @@
         padding-right: 15px;
         padding-top: 20px;
     }
+
     .hero-section {
         padding: 40px 20px;
         min-height: 180px;
     }
+
     .hero-content h1 {
         font-size: 1.5rem;
         max-width: 80%;
     }
+
     .category-grid {
         grid-template-columns: 1fr 1fr;
         gap: 15px;
     }
+
     .scroll-container {
+        display: flex;
+        gap: 20px;
+
+        /* THÊM CÁC DÒNG NÀY VÀO */
         overflow-x: auto;
-        padding-bottom: 15px;
-        -ms-overflow-style: none;
+        /* Luôn cho phép cuộn ngang */
+        scroll-snap-type: x mandatory;
+        /* Bắt buộc dừng lại ở điểm snap */
+        -webkit-overflow-scrolling: touch;
+        /* Hỗ trợ cuộn mượt trên iOS */
+
+        /* Thêm các dòng này để ẩn thanh cuộn nếu bạn muốn */
         scrollbar-width: none;
+        /* Ẩn thanh cuộn trên Firefox */
     }
+
+
     .scroll-container::-webkit-scrollbar {
         display: none;
+        /* Ẩn thanh cuộn trên Chrome/Safari */
     }
+
+    /* Thêm mới đoạn này */
+    .rescue-card,
+    .interest-card,
+    .partner-logo {
+        scroll-snap-align: start;
+        /* Dừng lại khi mép trái của card chạm vào mép container */
+    }
+
+    /* THAY THẾ TOÀN BỘ KHỐI NÀY */
     .pagination-dots {
-        display: block;
-        text-align: center;
-        margin-top: -5px;
+        display: flex;
+        /* Dùng flex để căn giữa và tạo khoảng cách dễ hơn */
+        justify-content: center;
+        gap: 8px;
+        /* Khoảng cách giữa các dấu chấm */
+        margin-top: 15px;
+        /* Tăng khoảng cách với thanh trượt */
+        padding-bottom: 10px;
+        /* Thêm chút padding dưới cho thoáng */
     }
+
     .pagination-dots .dot {
-        display: inline-block;
         width: 8px;
         height: 8px;
         border-radius: 50%;
         background-color: #ccc;
-        margin: 0 4px;
-        transition: background-color 0.3s;
+        margin: 0;
+        /* Bỏ margin cũ đi vì đã có gap */
+        transition: all 0.3s;
     }
+
     .pagination-dots .dot.active {
         background-color: var(--primary-color);
+        transform: scale(1.2);
+        /* Thêm hiệu ứng phóng to khi active */
     }
-    .rescue-card { flex: 0 0 250px; }
-    .interest-card { flex: 0 0 90%; }
-    .partner-logo { flex: 0 0 120px; }
+
+    .rescue-card {
+        flex: 0 0 250px;
+    }
+
+    .interest-card {
+        flex: 0 0 90%;
+    }
+
+    .partner-logo {
+        flex: 0 0 120px;
+    }
 }
