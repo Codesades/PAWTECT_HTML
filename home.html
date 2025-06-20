@@ -15,6 +15,146 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
         rel="stylesheet">
 </head>
+<style>
+    /* --- STYLE MỚI CHO CATEGORY SLIDER (LAYOUT 2x2 TRÊN MOBILE) --- */
+
+
+    /* Container bao bọc slider và các mũi tên */
+    .category-slider-wrapper {
+        position: relative;
+        display: flex;
+        /* Dùng flexbox để căn giữa các nút */
+        align-items: center;
+        /* Căn giữa theo chiều dọc */
+        gap: 10px;
+        /* Khoảng cách giữa nút và lưới */
+
+        /* Thêm đoạn này để các nút không bị dính sát lề trên mobile */
+        margin: 0 -5px;
+    }
+
+    /* Các nút mũi tên */
+    .slider-arrow {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        color: #555;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+        /* Ngăn nút bị co lại */
+    }
+
+    .slider-arrow:hover {
+        color: var(--primary-color);
+    }
+
+    .slider-arrow:disabled {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .slider-arrow.prev {
+        order: -1;
+        /* Luôn đặt nút "Trước" ở đầu */
+    }
+
+
+    /* Container lưới, đóng vai trò là slider */
+    .category-grid {
+        display: flex;
+        /* Dùng flex để các "trang" nằm trên một hàng */
+        flex-grow: 1;
+        /* Lưới sẽ chiếm hết không gian còn lại */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Ẩn thanh cuộn */
+    }
+
+    .category-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Mỗi "trang" của slider */
+    .category-page {
+        flex: 0 0 100%;
+        /* Mỗi trang chiếm 100% chiều rộng của container lưới */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Luôn là 2 cột */
+        gap: 15px;
+        scroll-snap-align: start;
+        /* Dừng lại ở đầu mỗi trang khi vuốt */
+    }
+
+    /* Style cho từng card danh mục */
+    .category-card {
+        background-color: var(--primary-color);
+        color: var(--light-color);
+        padding: 25px 15px;
+        text-align: center;
+        border-radius: var(--border-radius-md);
+        font-weight: 700;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
+        transition: background-color 0.2s;
+    }
+
+    .category-card:hover {
+        background-color: #009ac1;
+    }
+
+    .category-card.disabled {
+        background-color: var(--primary-color);
+        /* Giữ nguyên màu nền */
+        opacity: 0.6;
+        /* Chỉ làm mờ đi */
+        cursor: not-allowed;
+        pointer-events: none;
+        /* Không cho phép click */
+    }
+
+    .category-card.disabled:hover {
+        background-color: var(--primary-color);
+        /* Không đổi màu khi hover */
+    }
+
+
+    /* Dấu chấm điều hướng */
+    .categories-section .pagination-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .categories-section .pagination-dots .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ccc;
+        transition: all 0.3s ease;
+    }
+
+    .categories-section .pagination-dots .dot.active {
+        background-color: var(--primary-color);
+        transform: scale(1.2);
+    }
+</style>
 
 <body>
     <!-- HEADER -->
@@ -71,13 +211,30 @@
             </section>
 
             <!-- CATEGORIES -->
+
             <section class="categories-section">
                 <h2 class="section-title">DANH MỤC</h2>
-                <div class="category-grid">
-                    <a href="report-location.html" class="category-card">BÁO CÁO CA CỨU HỘ</a>
-                    <a href="find_friends.html" class="category-card">TÌM BẠN ĐỒNG HÀNH</a>
-                    <a href="vets.html" class="category-card">KẾT NỐI VỚI THÚ Y</a>
-                    <a href="premium.html" class="category-card">KHÁM PHÁ PREMIUM</a>
+
+                <div class="category-slider-wrapper">
+                    <!-- Nút điều khiển bên trái -->
+                    <button class="slider-arrow prev" id="category-prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <!-- Container lưới, đóng vai trò là slider -->
+                    <div class="category-grid" id="category-grid-container">
+                        <!-- JavaScript sẽ điền các mục danh mục vào đây -->
+                    </div>
+
+                    <!-- Nút điều khiển bên phải -->
+                    <button class="slider-arrow next" id="category-next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Dấu chấm điều hướng -->
+                <div class="pagination-dots" id="category-pagination">
+                    <!-- JavaScript sẽ tạo các dấu chấm ở đây -->
                 </div>
             </section>
 
